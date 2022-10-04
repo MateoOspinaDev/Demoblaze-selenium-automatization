@@ -10,20 +10,6 @@ repositories {
 }
 
 dependencies {
-//    implementation("org.seleniumhq.selenium:selenium-java:4.+")
-//    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.+"'
-///*
-//    implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.11.0'
-//    implementation 'junit:junit:4.13.1'
-//    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.11.0'
-//
-//    testImplementation "org.assertj:assertj-core:3.23.1"*/
-//    implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.11.0'
-//    implementation 'junit:junit:4.13.1'
-//    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.11.0'
-//
-//    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
-//    testImplementation "org.slf4j:slf4j-simple:1.7.36"
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.11.0'
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.11.0'
