@@ -7,8 +7,8 @@ import org.mateo.automatizacione2eselenium.model.Product;
 import org.mateo.automatizacione2eselenium.model.User;
 import org.mateo.automatizacione2eselenium.tasks.Add;
 
-import static org.mateo.automatizacione2eselenium.pornombrar.Actors.theActorCalled;
-import static org.mateo.automatizacione2eselenium.pornombrar.Actors.theActorInTheSpotlight;
+import static org.mateo.automatizacione2eselenium.screenplay.Actors.theActorCalled;
+import static org.mateo.automatizacione2eselenium.screenplay.Actors.theActorInTheSpotlight;
 import static org.mateo.automatizacione2eselenium.questions.PurchaseSuccessful.thePurchaseIsSuccessful;
 import static org.mateo.automatizacione2eselenium.tasks.Authenticator.authenticate;
 import static org.mateo.automatizacione2eselenium.tasks.Buy.buy;

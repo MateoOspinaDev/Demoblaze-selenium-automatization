@@ -3,7 +3,7 @@ package org.mateo.automatizacione2eselenium.tasks;
 import org.mateo.automatizacione2eselenium.pages.CartPage;
 import org.mateo.automatizacione2eselenium.pages.HomePage;
 import org.mateo.automatizacione2eselenium.pages.PlaceOrderPage;
-import org.mateo.automatizacione2eselenium.pornombrar.Action;
+import org.mateo.automatizacione2eselenium.screenplay.Action;
 import org.mateo.automatizacione2eselenium.utils.Sleep;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

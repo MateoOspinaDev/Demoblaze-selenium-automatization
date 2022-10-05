@@ -1,4 +1,4 @@
-package org.mateo.automatizacione2eselenium.pornombrar;
+package org.mateo.automatizacione2eselenium.screenplay;
 
 import org.openqa.selenium.WebDriver;
 

@@ -1,9 +1,8 @@
-package org.mateo.automatizacione2eselenium.pornombrar;
+package org.mateo.automatizacione2eselenium.screenplay;
 
 import org.mateo.automatizacione2eselenium.utils.DriverFactory;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Actor {
     private final String name;
