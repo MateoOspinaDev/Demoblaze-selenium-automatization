@@ -7,6 +7,8 @@ import org.mateo.automatizacione2eselenium.screenplay.Action;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import static org.mateo.automatizacione2eselenium.utils.Wait.waitingBad;
+
 public class Authenticator implements Action {
 
     private final User user;
@@ -21,17 +23,10 @@ public class Authenticator implements Action {
     public void perform(WebDriver driver) {
         initPages(driver);
         homePage.loginBanner.click();
-        try {
-            Thread.sleep(2000);
-        }catch (Exception e){
-        }
+        waitingBad();
         loginPage.username.sendKeys(user.getUsername());
         loginPage.password.sendKeys(user.getPasswork());
         loginPage.loginButton.click();
-        try {
-            Thread.sleep(2000);
-        }catch (Exception e){
-        }
     }
 
     private void initPages(WebDriver driver) {

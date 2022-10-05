@@ -4,9 +4,10 @@ import org.mateo.automatizacione2eselenium.pages.CartPage;
 import org.mateo.automatizacione2eselenium.pages.HomePage;
 import org.mateo.automatizacione2eselenium.pages.PlaceOrderPage;
 import org.mateo.automatizacione2eselenium.screenplay.Action;
-import org.mateo.automatizacione2eselenium.utils.Sleep;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import static org.mateo.automatizacione2eselenium.utils.Wait.waitingBad;
 
 public class Buy implements Action {
 
@@ -20,11 +21,11 @@ public class Buy implements Action {
     @Override
     public void perform(WebDriver driver) {
         initPages(driver);
-        Sleep.sleep();
+        waitingBad();
         homePage.cart.click();
-        Sleep.sleep();
+        waitingBad();
         cartPage.placeOrderButton.click();
-        Sleep.sleep();
+        waitingBad();
         placeOrderPage.name.sendKeys("Mateo");
         placeOrderPage.country.sendKeys("Colombia");
         placeOrderPage.city.sendKeys("Bogota");

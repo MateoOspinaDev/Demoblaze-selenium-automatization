@@ -4,9 +4,10 @@ import org.mateo.automatizacione2eselenium.model.Product;
 import org.mateo.automatizacione2eselenium.pages.HomePage;
 import org.mateo.automatizacione2eselenium.pages.ProductPage;
 import org.mateo.automatizacione2eselenium.screenplay.Action;
-import org.mateo.automatizacione2eselenium.utils.Sleep;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import static org.mateo.automatizacione2eselenium.utils.Wait.waitingBad;
 
 public class Add implements Action {
     private final Product product;
@@ -21,15 +22,15 @@ public class Add implements Action {
     @Override
     public void perform(WebDriver driver) {
         initPages(driver);
-        Sleep.sleep();
+        waitingBad();
         homePage.home.click();
-        Sleep.sleep();
+        waitingBad();
         homePage.categoryMenu(product.getCategory()).click();
-        Sleep.sleep();
+        waitingBad();
         homePage.product(product.getName()).click();
-        Sleep.sleep();
+        waitingBad();
         productPage.addToCarButton.click();
-        Sleep.sleep();
+        waitingBad();
         driver.switchTo().alert().accept();
     }
 
