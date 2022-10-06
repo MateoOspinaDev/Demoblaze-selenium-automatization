@@ -1,7 +1,6 @@
 package org.mateo.automatizacione2eselenium.questions;
 
 import org.mateo.automatizacione2eselenium.pages.SuccessfulMessage;
-import org.mateo.automatizacione2eselenium.screenplay.Question;
 import org.mateo.automatizacione2eselenium.utils.Wait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +12,7 @@ public class PurchaseSuccessful implements Question {
     @Override
     public Boolean answeredBy(WebDriver driver) {
         initPages(driver);
-        Wait.waiting(5,successfulMessage.successfulMessage);
+        Wait.waiting(successfulMessage.successfulMessage, driver);
         return successfulMessage.successfulMessage.isDisplayed();
     }
 

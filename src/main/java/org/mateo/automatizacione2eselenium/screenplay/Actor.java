@@ -1,6 +1,7 @@
 package org.mateo.automatizacione2eselenium.screenplay;
 
-import org.mateo.automatizacione2eselenium.utils.DriverFactory;
+import org.mateo.automatizacione2eselenium.questions.Question;
+import org.mateo.automatizacione2eselenium.driver.DriverFactory;
 
 import java.util.Arrays;
 

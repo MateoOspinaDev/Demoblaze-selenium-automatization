@@ -1,4 +1,4 @@
-package org.mateo.automatizacione2eselenium.utils;
+package org.mateo.automatizacione2eselenium.driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

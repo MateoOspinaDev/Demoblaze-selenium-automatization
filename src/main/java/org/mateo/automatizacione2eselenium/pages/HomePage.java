@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static org.mateo.automatizacione2eselenium.utils.DriverFactory.getDriver;
+import static org.mateo.automatizacione2eselenium.driver.DriverFactory.getDriver;
 
 public class HomePage {
     WebDriver getDriver= getDriver();

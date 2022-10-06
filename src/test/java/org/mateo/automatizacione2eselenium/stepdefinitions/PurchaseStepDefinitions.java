@@ -36,7 +36,6 @@ public class PurchaseStepDefinitions {
         );
     }
 
-
     @When("^[a-zA-Z]{3,50} makes the purchase$")
     public void purchase() {
         theActorInTheSpotlight().attemptsTo(

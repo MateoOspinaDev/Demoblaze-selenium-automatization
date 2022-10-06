@@ -1,33 +1,50 @@
 package org.mateo.automatizacione2eselenium.utils;
 
+import org.mateo.automatizacione2eselenium.driver.DriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
-import static org.mateo.automatizacione2eselenium.utils.DriverFactory.getDriver;
+import static org.mateo.automatizacione2eselenium.driver.DriverFactory.getDriver;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class Wait {
-    public static void waiting(int seconds, WebElement webElement){
-        WebDriverWait wait = new WebDriverWait(getDriver(),seconds);
-        wait.until(ExpectedConditions.visibilityOf(webElement));
+    private static WebDriverWait webDriverWait;
+
+
+    public static void waiting(WebElement webElement, WebDriver driver) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, 10);
+            wait.until(ExpectedConditions.visibilityOf(webElement));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void waitingBad() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+    }
+    public static WebDriverWait inCurrentBrowser(){
+        webDriverWait = new WebDriverWait(DriverFactory.getDriver(), 10L);
+        return webDriverWait;
     }
 
-    public static void waitingLessBad(int seconds, WebElement webElement){
-        WebDriverWait wait =  new WebDriverWait(getDriver(),seconds);
-        WebElement element = wait.until(elementToBeClickable(webElement));
-        getDriver().manage().timeouts().pageLoadTimeout(seconds, TimeUnit.SECONDS);
+
+
+    public static void waitingGoodOrBad(int seconds, WebDriver driver, WebElement webElement){
+        WebElement Espera=new WebDriverWait(driver,10)
+                .until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
+    public static void waitingAlert(int seconds, WebDriver driver, WebElement webElement){
+        //Alert alert = wait.until(ExpectedConditions.alertIsPresent());
     }
 
 }
