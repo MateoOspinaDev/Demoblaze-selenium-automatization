@@ -9,7 +9,7 @@ public class CucumberHook {
     private WebDriver driver;
 
     @Before
-    public void setup(){
+    public void initPage(){
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = DriverFactory.getDriver();
         driver.manage().window().maximize();
@@ -17,8 +17,7 @@ public class CucumberHook {
     }
 
     @After
-    public void down(){
-        //driver.close();
+    public void quitPage(){
         driver.quit();
     }
 

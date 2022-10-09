@@ -7,9 +7,9 @@ import org.mateo.automatizacione2eselenium.model.Product;
 import org.mateo.automatizacione2eselenium.model.User;
 import org.mateo.automatizacione2eselenium.tasks.Add;
 
-import static org.mateo.automatizacione2eselenium.screenplay.Actors.theActorCalled;
-import static org.mateo.automatizacione2eselenium.screenplay.Actors.theActorInTheSpotlight;
-import static org.mateo.automatizacione2eselenium.questions.PurchaseSuccessful.thePurchaseIsSuccessful;
+import static org.mateo.automatizacione2eselenium.screenplay.actor.ActorsLogic.theActorCalled;
+import static org.mateo.automatizacione2eselenium.screenplay.actor.ActorsLogic.theActorInTheSpotlight;
+import static org.mateo.automatizacione2eselenium.tasks.PurchaseSuccessful.thePurchaseIsSuccessful;
 import static org.mateo.automatizacione2eselenium.tasks.Authenticator.authenticate;
 import static org.mateo.automatizacione2eselenium.tasks.Buy.buy;
 
@@ -20,31 +20,33 @@ public class PurchaseStepDefinitions {
 
 
     @Given("^(.*) is authenticated$")
-    public void Authenticate(String actorName){
-        theActorCalled(actorName).wasAbleTo(
-                authenticate(User.builder()
+    public void AuthenticateUser(String actorName){
+        theActorCalled(actorName)
+                .wasAbleTo(authenticate(User.builder()
                         .username(USER)
-                        .passwork(PASSWORD).build())
+                        .password(PASSWORD).build())
         );
     }
 
     @Given("^add from (.*) [a-z]{1,2} (.*)$")
-    public void addToCart(String category, String product) {
-        Product aproduct = Product.builder().category(category).name(product).build();
-        theActorInTheSpotlight().attemptsTo(
-                Add.toCar(aproduct)
+    public void addToCartAProduct(String category, String product) {
+        Product aProduct = Product.builder().category(category).name(product).build();
+        theActorInTheSpotlight()
+                .attemptsTo(
+                    Add.toCar(aProduct)
         );
     }
 
     @When("^[a-zA-Z]{3,50} makes the purchase$")
-    public void purchase() {
+    public void purchaseTheProducts() {
         theActorInTheSpotlight().attemptsTo(
                 buy()
         );
     }
 
     @Then("should see the message Thank you for your purchase")
-    public void shouldSeeTheMessageThankYouForYourPurchase() {
+    public void theUserShouldSeeTheMessageThankYouForYourPurchase() {
+        String message = "Thank you for your purchase";
         theActorInTheSpotlight().shouldSee(
                 thePurchaseIsSuccessful()
         );

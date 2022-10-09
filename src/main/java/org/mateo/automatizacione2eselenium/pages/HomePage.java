@@ -12,6 +12,8 @@ public class HomePage {
 
     @FindBy(id = "login2")
     public WebElement loginBanner;
+    @FindBy(id = "logout2")
+    public WebElement logoutBanner;
     @FindBy(xpath = "//a[text()='Home ']")
     public WebElement home;
     @FindBy(xpath = "//*[@id=\"navbarExample\"]/ul/li[4]/a")
@@ -20,7 +22,8 @@ public class HomePage {
     public WebElement categoryMenu(String category){
         return getDriver.findElement(By.xpath("//a[text()='"+category+"']"));
     }
-    public WebElement product(String product){
-        return getDriver.findElement(By.xpath("//div[contains(@class,'card')]//a[text()='"+product+"']"));
+
+    public By ByProduct(String product){
+        return By.xpath("//div[contains(@class,'card')]//a[text()='"+product+"']");
     }
 }

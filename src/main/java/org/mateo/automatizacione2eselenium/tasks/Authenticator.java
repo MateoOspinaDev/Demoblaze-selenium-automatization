@@ -3,7 +3,7 @@ package org.mateo.automatizacione2eselenium.tasks;
 import org.mateo.automatizacione2eselenium.model.User;
 import org.mateo.automatizacione2eselenium.pages.HomePage;
 import org.mateo.automatizacione2eselenium.pages.LoginPage;
-import org.mateo.automatizacione2eselenium.screenplay.Action;
+import org.mateo.automatizacione2eselenium.screenplay.actions.Action;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -23,9 +23,9 @@ public class Authenticator implements Action {
     public void perform(WebDriver driver) {
         initPages(driver);
         homePage.loginBanner.click();
-        waiting(loginPage.loginButton, driver);
+        waitingForElement(loginPage.loginButton, driver);
         loginPage.username.sendKeys(user.getUsername());
-        loginPage.password.sendKeys(user.getPasswork());
+        loginPage.password.sendKeys(user.getPassword());
         loginPage.loginButton.click();
     }
 

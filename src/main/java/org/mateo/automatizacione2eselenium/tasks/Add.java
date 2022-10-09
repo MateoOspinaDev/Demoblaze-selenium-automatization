@@ -3,15 +3,10 @@ package org.mateo.automatizacione2eselenium.tasks;
 import org.mateo.automatizacione2eselenium.model.Product;
 import org.mateo.automatizacione2eselenium.pages.HomePage;
 import org.mateo.automatizacione2eselenium.pages.ProductPage;
-import org.mateo.automatizacione2eselenium.screenplay.Action;
-import org.openqa.selenium.By;
+import org.mateo.automatizacione2eselenium.screenplay.actions.Action;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.mateo.automatizacione2eselenium.driver.DriverFactory.getDriver;
 import static org.mateo.automatizacione2eselenium.utils.Wait.*;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
@@ -28,16 +23,17 @@ public class Add implements Action {
     @Override
     public void perform(WebDriver driver) {
         initPages(driver);
-        inCurrentBrowser().until(elementToBeClickable(homePage.categoryMenu(product.getCategory())));
+        waitingForElement(homePage.logoutBanner, driver);
         homePage.home.click();
-        waitingBad();
         homePage.categoryMenu(product.getCategory()).click();
-        waitingBad();
-        homePage.product(product.getName()).click();
-        waitingBad();
+
+        waitingForDianmicElement(homePage.ByProduct(product.getName()),driver)
+                .click();
+
+        waitingForElement(productPage.addToCarButton, driver);
         productPage.addToCarButton.click();
-        waitingBad();
-        driver.switchTo().alert().accept();
+        waitingAndSwitchToAlert(driver)
+                .accept();
     }
 
     private void initPages(WebDriver driver) {
