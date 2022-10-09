@@ -22,3 +22,5 @@ gradle-app.setting
 #Se pueden quitar cuando se trabaja con imagenes de docker
 #drivers
 geckodriver.exe
+chromedriver.exe
+msedgedriver.exe
